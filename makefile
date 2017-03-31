@@ -8,7 +8,7 @@ install:
 uninstall:
 	rm $(INSTALLDIR)/$(NAME)
 clean:
-	rm $(NAME)-*.pkg.tar.gz
+	rm *.pkg.tar.gz
 togit:
 	git add .
 	git commit -m "Updated from makefile"
