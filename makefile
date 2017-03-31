@@ -7,6 +7,8 @@ install:
 	install -Dm 755 src/$(NAME).py $(INSTALLDIR)/$(NAME)
 uninstall:
 	rm $(INSTALLDIR)/$(NAME)
+clean:
+	rm $(NAME)-*.pkg.tar.gz
 togit:
 	git add .
 	git commit -m "Updated from makefile"
