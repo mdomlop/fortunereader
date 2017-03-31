@@ -22,12 +22,7 @@ pkgver() {
   git rev-list --count HEAD
 }
 
-build() {
-    cd "${srcdir}/${_pkgname}"
-    make
-    }
-
 package() {
     cd "${srcdir}/${_pkgname}"
-    make install PREFIX=${pkgdir}/usr OUTDIR=/tmp
+    make PREFIX=${pkgdir} install
 }
