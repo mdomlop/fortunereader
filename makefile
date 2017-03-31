@@ -1,10 +1,22 @@
-exe='fortunereader.py'
+NAME='fortunereader'
+PREFIX='/usr'
+INSTALLDIR=$(PREFIX)'/bin'
+TEMPDIR := $(shell mktemp -u --suffix .$(THEMENAME))
 
 install:
-	install -m 755 $(exe) /usr/bin/
+	install -m 755 $(NAME).py $(INSTALLDIR)/$(NAME)
 uninstall:
-	rm /usr/bin/$(exe)
+	rm $(INSTALLDIR)/$(NAME)
 togit:
 	git add .
 	git commit -m "Updated from makefile"
 	git push origin
+
+pacman:
+	mkdir $(TEMPDIR)
+	cp packages/pacman/PKGBUILD $(TEMPDIR)/
+	cd $(TEMPDIR); makepkg
+	cp $(TEMPDIR)/$(NAME)-*.pkg.tar.xz .
+	@echo Package done!
+	@echo You can install it as root with:
+	@echo pacman -U $(NAME)-*.pkg.tar.xz

@@ -1,0 +1,33 @@
+# Maintainer: Manuel Domínguez López <mdomlop at gmail dot com>
+
+_pkgver_year=2017
+_pkgver_month=03
+_pkgver_day=31
+
+_pkgname=fortunereader
+pkgver=41
+pkgname=${_pkgname}-${pkgver}
+pkgrel=1
+pkgdesc="A simple fortune interface written in python tk."
+url="https://github.com/manueldl/${_pkgname}"
+source=("git+https://github.com/manueldl/${_pkgname}.git")
+md5sums=('SKIP')
+license=('GPL3')
+depends=('python>=3', 'fortune-mod')
+makedepends=('git')
+arch=('any')
+
+pkgver() {
+  cd ${srcdir}/${_pkgname}
+  git rev-list --count HEAD
+}
+
+build() {
+    cd "${srcdir}/${_pkgname}"
+    make
+    }
+
+package() {
+    cd "${srcdir}/${_pkgname}"
+    make install PREFIX=${pkgdir}/usr OUTDIR=/tmp
+}
