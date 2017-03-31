@@ -4,7 +4,7 @@ INSTALLDIR=$(PREFIX)'/bin'
 TEMPDIR := $(shell mktemp -u --suffix .$(THEMENAME))
 
 install:
-	install -Sm 755 src/$(NAME).py $(INSTALLDIR)/$(NAME)
+	install -dm 755 src/$(NAME).py $(INSTALLDIR)/$(NAME)
 uninstall:
 	rm $(INSTALLDIR)/$(NAME)
 togit:
