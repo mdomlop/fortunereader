@@ -8,7 +8,7 @@ install:
 uninstall:
 	rm -f $(INSTALLDIR)/$(NAME)
 clean:
-	rm -f packages/pacman/PKGBUILD/*.pkg.tar.gz
+	rm -f packages/pacman/*.pkg.tar.gz
 togit: clean
 	git add .
 	git commit -m "Updated from makefile"
@@ -18,10 +18,6 @@ pacman:
 	mkdir $(TEMPDIR)
 	cp packages/pacman/PKGBUILD $(TEMPDIR)/
 	cd $(TEMPDIR); makepkg -dr
-	pwd
-	ls $(TEMPDIR)/$(NAME)-*.pkg.tar.xz
-	ls packages/pacman/
-	cp $(TEMPDIR)/$(NAME)-*.pkg.tar.xz ./packages/pacman/PKGBUILD/
+	cp $(TEMPDIR)/$(NAME)-*.pkg.tar.xz packages/pacman/
 	@echo Package done!
-	@echo You can install it as root with:
-	@echo pacman -U $(NAME)-*.pkg.tar.xz
+	@echo Package was in packages/pacman/
