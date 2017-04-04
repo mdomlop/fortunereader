@@ -6,10 +6,10 @@ TEMPDIR := $(shell mktemp -u --suffix .$(THEMENAME))
 install:
 	install -Dm 755 src/$(NAME).py $(INSTALLDIR)/$(NAME)
 uninstall:
-	rm $(INSTALLDIR)/$(NAME)
+	rm -f $(INSTALLDIR)/$(NAME)
 clean:
-	rm packages/pacman/PKGBUILD/*.pkg.tar.gz
-togit:
+	rm -f packages/pacman/PKGBUILD/*.pkg.tar.gz
+togit: clean
 	git add .
 	git commit -m "Updated from makefile"
 	git push origin
