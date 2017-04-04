@@ -20,7 +20,7 @@ pacman:
 	cd $(TEMPDIR); makepkg -dr
 	pwd
 	ls
-	cp $(TEMPDIR)/$(NAME)-*.pkg.tar.xz packages/pacman/PKGBUILD/
+	cp $(TEMPDIR)/$(NAME)-*.pkg.tar.xz ./packages/pacman/PKGBUILD/
 	@echo Package done!
 	@echo You can install it as root with:
 	@echo pacman -U $(NAME)-*.pkg.tar.xz
