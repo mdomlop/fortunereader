@@ -21,4 +21,4 @@ pacman:
 	cp $(TEMPDIR)/$(NAME)-*.pkg.tar.xz packages/pacman/
 	rm -rf $(TEMPDIR)
 	@echo Package done!
-	@echo Package was in `pwd`/packages/pacman/
+	@echo Package is in `pwd`/packages/pacman/
