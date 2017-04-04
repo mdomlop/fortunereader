@@ -4,25 +4,27 @@ _pkgver_year=2017
 _pkgver_month=03
 _pkgver_day=31
 
-_pkgname=fortunereader
+_gitname=fortunereader
+pkgname=${_gitname}-git
 pkgver=41
-pkgname=${_pkgname}-${pkgver}
 pkgrel=1
 pkgdesc="A simple fortune interface written in python tk."
-url="https://github.com/manueldl/${_pkgname}"
-source=("git+https://github.com/manueldl/${_pkgname}.git")
-md5sums=('SKIP')
+arch=('any')
+url="https://github.com/manueldl/${_gitname}"
+source=("git+https://github.com/manueldl/${_gitname}.git")
 license=('GPL3')
 depends=('python>=3', 'fortune-mod')
 makedepends=('git')
-arch=('any')
+conflicts=(${_gitname})
+
+md5sums=('SKIP')
 
 pkgver() {
-  cd ${srcdir}/${_pkgname}
+  cd ${srcdir}/${_gitname}
   git rev-list --count HEAD
 }
 
 package() {
-    cd "${srcdir}/${_pkgname}"
+    cd "${srcdir}/${_gitname}"
     make PREFIX=${pkgdir} install
 }
