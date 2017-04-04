@@ -1,14 +1,16 @@
 NAME='fortunereader'
 PREFIX='/usr'
-INSTALLDIR=$(PREFIX)'/usr/bin'
 TEMPDIR := $(shell mktemp -u --suffix .$(NAME))
 
 install:
-	install -Dm 755 src/$(NAME).py $(INSTALLDIR)/$(NAME)
+	install -Dm 755 src/$(NAME).py $(PREFIX)/bin/$(NAME)
+
 uninstall:
-	rm -f $(INSTALLDIR)/$(NAME)
+	rm -f $(PREFIX)/bin/$(NAME)
+
 clean:
 	rm -f packages/pacman/$(NAME)-*.pkg.tar.xz
+
 togit: clean
 	git add .
 	git commit -m "Updated from makefile"

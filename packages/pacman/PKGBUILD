@@ -27,5 +27,5 @@ pkgver() {
 
 package() {
     cd "${srcdir}/${_gitname}"
-    make PREFIX=${pkgdir} install
+    make PREFIX=${pkgdir}/usr install
 }
