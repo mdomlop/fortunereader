@@ -19,5 +19,6 @@ pacman:
 	cp packages/pacman/PKGBUILD $(TEMPDIR)/
 	cd $(TEMPDIR); makepkg -dr
 	cp $(TEMPDIR)/$(NAME)-*.pkg.tar.xz packages/pacman/
+	rm -rf $(TEMPDIR)
 	@echo Package done!
 	@echo Package was in packages/pacman/
