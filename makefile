@@ -1,6 +1,6 @@
 NAME='fortunereader'
 PREFIX='/usr'
-INSTALLDIR=$(PREFIX)'/bin'
+INSTALLDIR=$(PREFIX)'/usr/bin'
 TEMPDIR := $(shell mktemp -u --suffix .$(THEMENAME))
 
 install:
