@@ -15,7 +15,6 @@ source=("git+https://github.com/manueldl/${_gitname}.git")
 license=('GPL3')
 depends=('python>=3', 'fortune-mod')
 makedepends=('git')
-optdepends=('fortune-mod-es: Fortune Cookies in Spanish')
 conflicts=(${_gitname})
 
 md5sums=('SKIP')
