@@ -13,7 +13,8 @@ arch=('any')
 url="https://github.com/manueldl/${_gitname}"
 source=("git+https://github.com/manueldl/${_gitname}.git")
 license=('GPL3')
-depends=('python>=3', 'fortune-mod', 'fortune-mod-es')
+depends=('python>=3', 'fortune-mod')
+optdepends=('fortune-mod-es: Fortune Cookies in Spanish')
 makedepends=('git')
 conflicts=(${_gitname})
 
