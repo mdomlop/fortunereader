@@ -8,7 +8,7 @@ install:
 uninstall:
 	rm -f $(INSTALLDIR)/$(NAME)
 clean:
-	rm packages/pacman/$(NAME)-*.pkg.tar.xz
+	rm -f packages/pacman/$(NAME)-*.pkg.tar.xz
 togit: clean
 	git add .
 	git commit -m "Updated from makefile"
