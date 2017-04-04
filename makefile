@@ -18,6 +18,8 @@ pacman:
 	mkdir $(TEMPDIR)
 	cp packages/pacman/PKGBUILD $(TEMPDIR)/
 	cd $(TEMPDIR); makepkg -dr
+	pwd
+	ls
 	cp $(TEMPDIR)/$(NAME)-*.pkg.tar.xz packages/pacman/PKGBUILD/
 	@echo Package done!
 	@echo You can install it as root with:
