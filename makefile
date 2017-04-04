@@ -1,7 +1,7 @@
 NAME='fortunereader'
 PREFIX='/usr'
 INSTALLDIR=$(PREFIX)'/usr/bin'
-TEMPDIR := $(shell mktemp -u --suffix .$(THEMENAME))
+TEMPDIR := $(shell mktemp -u --suffix .$(NAME))
 
 install:
 	install -Dm 755 src/$(NAME).py $(INSTALLDIR)/$(NAME)
