@@ -4,6 +4,8 @@ TEMPDIR := $(shell mktemp -u --suffix .$(NAME))
 
 install:
 	install -Dm 755 src/$(NAME).py $(PREFIX)/bin/$(NAME)
+	install -Dm 644 LICENSE $(PREFIX)/share/licenses/$(NAME)/COPYING
+	install -Dm 644 README.md $(PREFIX)/share/doc/$(NAME)/README
 
 uninstall:
 	rm -f $(PREFIX)/bin/$(NAME)
