@@ -3,15 +3,15 @@ PREFIX='/usr'
 TEMPDIR := $(shell mktemp -u --suffix .$(NAME))
 
 install:
+	msgfmt src/locale/en.po -o en.mo
+	msgfmt src/locale/es.po -o es.mo
+	msgfmt src/locale/es_ES.po -o es_ES.mo
 	install -Dm 755 src/$(NAME).py $(PREFIX)/bin/$(NAME)
 	install -Dm 644 LICENSE $(PREFIX)/share/licenses/$(NAME)/COPYING
 	install -Dm 644 README.md $(PREFIX)/share/doc/$(NAME)/README
-	msgfmt src/locale/en.po -o $(PREFIX)/share/en/LC_MESSAGES/fortunereader.mo
-	msgfmt src/locale/es.po -o $(PREFIX)/share/es/LC_MESSAGES/fortunereader.mo
-	msgfmt src/locale/es_ES.po $(PREFIX)/share/es_ES/LC_MESSAGES/fortunereader.mo
-	chmod 644 $(PREFIX)/share/en/LC_MESSAGES/fortunereader.mo
-	chmod 644 $(PREFIX)/share/es/LC_MESSAGES/fortunereader.mo
-	chmod 644 $(PREFIX)/share/es_ES/LC_MESSAGES/fortunereader.mo
+	install -Dm 644 en.mo $(PREFIX)/share/en/LC_MESSAGES/fortunereader.mo
+	install -Dm 644 es.mo $(PREFIX)/share/es/LC_MESSAGES/fortunereader.mo
+	install -Dm 644 es_ES.mo $(PREFIX)/share/es_ES/LC_MESSAGES/fortunereader.mo
 
 uninstall:
 	rm -f $(PREFIX)/bin/$(NAME)
@@ -22,7 +22,8 @@ uninstall:
 	rm -f $(PREFIX)/share/es_ES/LC_MESSAGES/fortunereader.mo
 
 clean:
-	rm -f packages/pacman/$(NAME)-*.pkg.tar.xz
+	rm -f *.mo
+	rm -f packages/pacman/$(rAME)-*.pkg.tar.xz
 
 togit: clean
 	git add .
