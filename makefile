@@ -27,7 +27,7 @@ togit: clean
 	git commit -m "Updated from makefile"
 	git push origin
 
-pacman:
+pacman: clean
 	mkdir $(TEMPDIR)
 	cp packages/pacman/PKGBUILD $(TEMPDIR)/
 	cd $(TEMPDIR); makepkg -dr
