@@ -20,7 +20,7 @@ uninstall:
 
 clean:
 	rm -f *.mo
-	rm -f packages/pacman/$(rAME)-*.pkg.tar.xz
+	rm -f packages/pacman/$(NAME)-*.pkg.tar.xz
 
 togit: clean
 	git add .
