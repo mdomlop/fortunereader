@@ -2,9 +2,6 @@
 # Fortune reader: A interface for reading fortune cookies.
 # License: GPLv3+
 # Author: Manuel Domínguez López
-# Changelog:
-# 201512200621: Se añaden marcos y barras de desplazamiento.
-# 201512192230: Versión inicial.
 
 
 import tkinter
