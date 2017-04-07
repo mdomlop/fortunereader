@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-07 18:15+0200\n"
+"PO-Revision-Date: 2017-04-07 18:18+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es_ES\n"
+
+#: fortunereader.py:41
+msgid "You have not permission to save cookies"
+msgstr "No tienes permiso para guardar las galletas"
+
+#: fortunereader.py:42 fortunereader.py:49
+msgid "Warning"
+msgstr "Advertencia"
+
+#: fortunereader.py:47
+msgid "The database file is a directory.             You can not save cookies there."
+msgstr "El archivo de base de datos es un directorio.             No puedes guardar las galletas ahí."
+
+#: fortunereader.py:54
+msgid "Error"
+msgstr "Error"
+
+#: fortunereader.py:55
+msgid "An unexpected error has happened:"
+msgstr "Ha ocurrido un error inesperado"
+
+#: fortunereader.py:56
+msgid ""
+"\n"
+"\n"
+"The program will close."
+msgstr ""
+"\n"
+"\n"
+"El programa se cerrará."
+
+#: fortunereader.py:109
+msgid "Already saved"
+msgstr "Ya se ha salvado"
+
+#: fortunereader.py:113
+msgid "Fortune:"
+msgstr "Fortuna:"
+
+#: fortunereader.py:174
+msgid "New cookie"
+msgstr "Nueva galleta"
+
+#: fortunereader.py:178
+msgid "Previous"
+msgstr "Anterior"
+
+#: fortunereader.py:181
+msgid "Next"
+msgstr "Siguiente"
+
+#: fortunereader.py:184
+msgid "Save"
+msgstr "Salvar"
+
+#: fortunereader.py:187
+msgid "Exit"
+msgstr "Salir"

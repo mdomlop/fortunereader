@@ -12,7 +12,9 @@ import tkinter.ttk
 import tkinter.messagebox
 import subprocess
 import os
+import gettext
 
+gettext.translation('fortunereader', localedir='locale').install()
 
 fortune = []  # Temp database containing fortune cookies
 saved = []  # Saved cookies
@@ -38,21 +40,22 @@ def loadlocaldb():
 
 
 def printwarnperm(
-        text='No tienes permiso para guardar las galletas',
-        title='Advertencia'):
-    tkinter.messagebox.showwarning("Advertencia: ", text)
+        text=_('You have not permission to save cookies'),
+        title=_('Warning')):
+    tkinter.messagebox.showwarning(title + ': ', text)
 
 
 def printwarndir(
-    text='El archivo de base de datos es un directorio. \
-            No puedes guardar las galletas ahí.', title='Advertencia'):
-    tkinter.messagebox.showwarning("Advertencia: ", text)
+    text=_('The database file is a directory. \
+            You can not save cookies there.'),
+            title=_('Warning')):
+    tkinter.messagebox.showwarning(title + ': ', text)
 
 
 def printerror(error):
-    title = 'Error' + '(' + str(error.errno) + '):  ' + error.strerror
-    text = 'Ha ocurrido un error inesperado:' + '\n\n' + '(' + str(error.errno)
-    + ')  ' + error.strerror + '\n\nEl programa se cerrará.'
+    title = _('Error') + '(' + str(error.errno) + '):  ' + error.strerror
+    text = _('An unexpected error has happened:') + '\n\n' + '(' + str(error.errno)
+    + ')  ' + error.strerror + _('\n\nThe program will close.')
     tkinter.messagebox.showerror(title, text)
     window.destroy()
     exit()
@@ -105,11 +108,11 @@ def savecookie():
         saved.append(cookie)
         disablebuttons(cookie)
     else:
-        print("Ya se ha salvado")
+        print(_('Already saved'))
 
 
 def settitle(index):
-    title = 'Fortuna:', index + 1
+    title = _('Fortune:'), index + 1
     window.title(title)
 
 
@@ -170,20 +173,20 @@ scrollbar.config(command=t1.yview)
 t1.config(yscrollcommand=scrollbar.set)
 
 bnew = tkinter.Button(
-        frame2, text="Nueva galleta",
+        frame2, text=_('New cookie'),
         font=('Sans', fontsize), command=newcookie)
 bnew.pack(side=tkinter.LEFT)
 bprev = tkinter.Button(
-        frame3, text="Anterior", font=('Sans', fontsize), command=prevcookie)
+        frame3, text=_('Previous'), font=('Sans', fontsize), command=prevcookie)
 bprev.pack(side=tkinter.LEFT)
 bnext = tkinter.Button(
-        frame3, text="Siguiente", font=('Sans', fontsize), command=nextcookie)
+        frame3, text=_('Next'), font=('Sans', fontsize), command=nextcookie)
 bnext.pack(side=tkinter.LEFT)
 bsave = tkinter.Button(
-        frame4, text="Guardar", font=('Sans', fontsize), command=savecookie)
+        frame4, text=_('Save'), font=('Sans', fontsize), command=savecookie)
 bsave.pack(side=tkinter.LEFT)
 bexit = tkinter.Button(
-        frame4, text="Salir", font=('Sans', fontsize), command=window.destroy)
+        frame4, text=_('Exit'), font=('Sans', fontsize), command=window.destroy)
 bexit.pack(side=tkinter.LEFT)
 
 loadlocaldb()
