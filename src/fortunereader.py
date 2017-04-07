@@ -14,7 +14,7 @@ import subprocess
 import os
 import gettext
 
-gettext.translation('fortunereader', localedir='locale').install()
+gettext.translation('fortunereader', localedir='/usr/share/locale').install()
 
 fortune = []  # Temp database containing fortune cookies
 saved = []  # Saved cookies
