@@ -9,17 +9,17 @@ install:
 	install -Dm 755 src/$(NAME).py $(PREFIX)/bin/$(NAME)
 	install -Dm 644 LICENSE $(PREFIX)/share/licenses/$(NAME)/COPYING
 	install -Dm 644 README.md $(PREFIX)/share/doc/$(NAME)/README
-	install -Dm 644 en.mo $(PREFIX)/share/en/LC_MESSAGES/fortunereader.mo
-	install -Dm 644 es.mo $(PREFIX)/share/es/LC_MESSAGES/fortunereader.mo
-	install -Dm 644 es_ES.mo $(PREFIX)/share/es_ES/LC_MESSAGES/fortunereader.mo
+	install -Dm 644 en.mo $(PREFIX)/share/locale/en/LC_MESSAGES/fortunereader.mo
+	install -Dm 644 es.mo $(PREFIX)/share/locale/es/LC_MESSAGES/fortunereader.mo
+	install -Dm 644 es_ES.mo $(PREFIX)/share/locale/es_ES/LC_MESSAGES/fortunereader.mo
 
 uninstall:
 	rm -f $(PREFIX)/bin/$(NAME)
 	rm -f $(PREFIX)/share/licenses/$(NAME)/COPYING
 	rm -f $(PREFIX)/share/doc/$(NAME)/README
-	rm -f $(PREFIX)/share/en/LC_MESSAGES/fortunereader.mo
-	rm -f $(PREFIX)/share/es/LC_MESSAGES/fortunereader.mo
-	rm -f $(PREFIX)/share/es_ES/LC_MESSAGES/fortunereader.mo
+	rm -f $(PREFIX)/share/locale/en/LC_MESSAGES/fortunereader.mo
+	rm -f $(PREFIX)/share/locale/es/LC_MESSAGES/fortunereader.mo
+	rm -f $(PREFIX)/share/locale/es_ES/LC_MESSAGES/fortunereader.mo
 
 clean:
 	rm -f *.mo
