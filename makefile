@@ -6,9 +6,9 @@ install:
 	install -Dm 755 src/$(NAME).py $(PREFIX)/bin/$(NAME)
 	install -Dm 644 LICENSE $(PREFIX)/share/licenses/$(NAME)/COPYING
 	install -Dm 644 README.md $(PREFIX)/share/doc/$(NAME)/README
-	msgfmt locale/en.po -o $(PREFIX)/share/en/LC_MESSAGES/fortunereader.mo
-	msgfmt locale/es.po -o $(PREFIX)/share/es/LC_MESSAGES/fortunereader.mo
-	msgfmt locale/es_ES.po $(PREFIX)/share/es_ES/LC_MESSAGES/fortunereader.mo
+	msgfmt src/locale/en.po -o $(PREFIX)/share/en/LC_MESSAGES/fortunereader.mo
+	msgfmt src/locale/es.po -o $(PREFIX)/share/es/LC_MESSAGES/fortunereader.mo
+	msgfmt src/locale/es_ES.po $(PREFIX)/share/es_ES/LC_MESSAGES/fortunereader.mo
 	chmod 644 $(PREFIX)/share/en/LC_MESSAGES/fortunereader.mo
 	chmod 644 $(PREFIX)/share/es/LC_MESSAGES/fortunereader.mo
 	chmod 644 $(PREFIX)/share/es_ES/LC_MESSAGES/fortunereader.mo
