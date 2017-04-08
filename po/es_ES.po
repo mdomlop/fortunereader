@@ -27,8 +27,10 @@ msgid "Warning"
 msgstr "Advertencia"
 
 #: fortunereader.py:47
-msgid "The database file is a directory.             You can not save cookies there."
-msgstr "El archivo de base de datos es un directorio.             No puedes guardar las galletas ahí."
+msgid "The database file is a directory.             You can not save cookies "
+"there."
+msgstr "El archivo de base de datos es un directorio.             No puedes "
+"guardar las galletas ahí."
 
 #: fortunereader.py:54
 msgid "Error"
@@ -70,7 +72,7 @@ msgstr "Siguiente"
 
 #: fortunereader.py:184
 msgid "Save"
-msgstr "Salvar"
+msgstr "Guardar"
 
 #: fortunereader.py:187
 msgid "Exit"
