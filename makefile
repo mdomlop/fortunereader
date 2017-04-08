@@ -3,9 +3,9 @@ PREFIX='/usr'
 TEMPDIR := $(shell mktemp -u --suffix .$(NAME))
 
 install:
-	msgfmt src/locale/es.po -o es.mo
-	msgfmt src/locale/es_ES.po -o es_ES.mo
-	install -Dm 755 src/$(NAME).py $(PREFIX)/bin/$(NAME)
+	msgfmt po/es.po -o es.mo
+	msgfmt po/es_ES.po -o es_ES.mo
+	install -Dm 755 $(NAME)/$(NAME).py $(PREFIX)/bin/$(NAME)
 	install -Dm 644 LICENSE $(PREFIX)/share/licenses/$(NAME)/COPYING
 	install -Dm 644 README.md $(PREFIX)/share/doc/$(NAME)/README
 	install -Dm 644 es.mo $(PREFIX)/share/locale/es/LC_MESSAGES/fortunereader.mo
