@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Galleta de la fortuna
+Exec=fortunereader
+Icon=fortune
+Categories=Game;
+Terminal=false
+Type=Application
