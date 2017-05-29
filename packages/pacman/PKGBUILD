@@ -10,8 +10,8 @@ pkgver=41
 pkgrel=1
 pkgdesc="A simple fortune interface written in python tk."
 arch=('any')
-url="https://github.com/manueldl/${_gitname}"
-source=("git+https://github.com/manueldl/${_gitname}.git")
+url="https://github.com/mdomlop/${_gitname}"
+source=("git+https://github.com/mdomlop/${_gitname}.git")
 license=('GPL3')
 depends=('python>=3', 'fortune-mod')
 makedepends=('git')

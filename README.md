@@ -1,4 +1,4 @@
-![preview](https://raw.githubusercontent.com/manueldl/fortunereader/master/preview.png "fortunereader running")
+![preview](https://raw.githubusercontent.com/mdomlop/fortunereader/master/preview.png "fortunereader running")
 
 Fortune reader
 ==============
