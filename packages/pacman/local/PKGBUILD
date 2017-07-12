@@ -1,31 +1,32 @@
 # Maintainer: Manuel Domínguez López <mdomlop at gmail dot com>
 
 _pkgver_year=2017
-_pkgver_month=03
-_pkgver_day=31
+_pkgver_month=01
+_pkgver_day=08
 
 _gitname=fortunereader
 pkgname=${_gitname}-git
-pkgver=41
+pkgver=local
 pkgrel=1
 pkgdesc="A simple fortune interface written in python tk."
-arch=('any')
 url="https://github.com/mdomlop/${_gitname}"
-source=("git+https://github.com/mdomlop/${_gitname}.git")
+source=("${_gitname}.tar")
+md5sums=('SKIP')
 license=('GPL3')
 depends=('python>=3', 'fortune-mod')
-makedepends=('git')
+makedepends=('gettext')
 optdepends=('fortune-mod-es: Fortune Cookies in Spanish')
+arch=('any')
+provides=($_gitname)
 conflicts=(${_gitname})
 
-md5sums=('SKIP')
-
-pkgver() {
-  cd ${srcdir}/${_gitname}
-  git rev-list --count HEAD
-}
+build() {
+    cd "${srcdir}/${_gitname}"
+    ./configure
+    make
+    }
 
 package() {
     cd "${srcdir}/${_gitname}"
-    make PREFIX=${pkgdir}/usr install
+    make install DESTDIR=${pkgdir}
 }
